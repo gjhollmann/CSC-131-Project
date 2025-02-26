@@ -1,4 +1,4 @@
 # CSC-131-Project
-# George was here! 
-# George was here again! again?
-# Fahim was here.
+# This is a website of a Athelete Management team.
+
+Welcome to the ""

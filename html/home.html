@@ -1,6 +1,101 @@
-<!--#include virtual="/header.html" -->
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--    <head>-->
+<!--        <style>-->
+<!--            .image-container {-->
+<!--                background-color: black;-->
+<!--                text-align: left; /* Aligns the image to the left */-->
+<!--                padding: 10px; /* Adds space around the image */-->
+<!--                padding-left: 80px;-->
+<!--                border-radius: 15px; /* Rounds the corners */-->
+<!--            }-->
+<!--        </style>-->
+<!--        <title>Home</title>-->
+<!--    </head>-->
 
+<!--    <body>-->
+
+<!--        <div class="image-container">-->
+<!--            <img src="main_logo.JPG" alt="main_logo.JPG" width="90">-->
+<!--        </div>-->
+
+<!--        <h1>Hello This is Home page</h1>-->
+
+<!--    </body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
 <html lang="en">
-    <h1> Hello This is Home page</h1>
+<head>
+    <style>
+        .image-container {
+            background-color: black;
+            padding: 10px 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center; /* Vertically aligns items */
+            justify-content: space-between; /* Pushes logo left, menu right */
+            height: 80px; /* Adjust as needed */
+        }
+
+        .image-container .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-container img {
+            margin-left: 20px; /* Adds spacing for the logo */
+        }
+
+        .image-container nav {
+            margin-left: auto; /* Pushes nav menu to the right */
+        }
+
+        .image-container nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .image-container nav ul li {
+            margin: 0 15px;
+        }
+
+        .image-container nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
+    <title>Home</title>
+</head>
+
+<body>
+
+<div class="image-container" id="header-placeholder">
+    <!-- Header will be loaded here -->
+</div>
+
+<h1>Hello This is Home page</h1>
+
+<script>
+    // Load header.html inside the black bar
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+</script>
+
+</body>
 </html>

@@ -9,21 +9,28 @@
 @font-face { font-family: Bodoni; font-weight: bold; src: url('/fonts/BodoniFLF-Bold.ttf');}
 
 body{
-	margin: 0;
+	margin: auto;
 	background-color:#faeacd;
 	color: #ffffff;
 	line-height: 1.5;
 }
+
 .header {
 	position: sticky;
 	top: 0;
-	padding: 20px 20px 40px;
+	padding: 10px 20px 25px;
 	background: #191919;
 	color: #f1f1f1;
+	margin: 0;
 	font-family: Bodoni, serif;
 	font-style: bold;
 }
 
+h1{
+	color: black;
+	text-align: center;
+	font-family: Bodoni, serif;
+}
 .header_button{
 	background-color: #191919;
 	border: none;
@@ -35,6 +42,7 @@ body{
 	font-family: Bodoni, serif;
 	font-size: 1.5vw;
 	float: left;
+	padding-top: 5px;
 	padding-right: 2vw;
 }
 
@@ -48,7 +56,16 @@ body{
 	cursor: pointer;
 	font-family: Bodoni, serif;
 	float: left;
+	padding-top: 5px;
 	padding-right: 22vw;
+}
+
+.athlete_container{
+	display: inline-block;
+	height: 400px;
+	width: 90%;
+	margin-left: 5%;
+	background-color: gray;
 }
 
 @media screen and (max-width: 600px){
@@ -61,7 +78,7 @@ body{
 </head>
 <body>
 	<main>
-		<header>
+		<div class="header">
 			<div class="content-width">
 				<div class="header">
 					<a href="home.html">
@@ -101,6 +118,13 @@ body{
 					</a>
 				</div>
 			</div>
-		</header>
+		</div>
+		<h1>
+		Our Athletes
+		</h1>
+		<div class="athlete_container">
+		</div>
+		<div class="athlete_container">
+		</div>
 </body>
 </html>

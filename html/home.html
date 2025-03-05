@@ -1,59 +1,137 @@
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
-<!--    <head>-->
-<!--        <style>-->
-<!--            .image-container {-->
-<!--                background-color: black;-->
-<!--                text-align: left; /* Aligns the image to the left */-->
-<!--                padding: 10px; /* Adds space around the image */-->
-<!--                padding-left: 80px;-->
-<!--                border-radius: 15px; /* Rounds the corners */-->
-<!--            }-->
-<!--        </style>-->
-<!--        <title>Home</title>-->
-<!--    </head>-->
+<!--<head>-->
+<!--    <style>-->
+<!--        /* Sets the whole webpage background to cream */-->
+<!--        body {-->
+<!--            background-color: #faeacd; /* Cream color */-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
 
-<!--    <body>-->
+<!--        .image-container {-->
+<!--            background-color: black;-->
+<!--            padding: 10px;-->
+<!--            border-radius: 15px;-->
+<!--            display: flex;-->
+<!--            align-items: center; /* Vertically aligns items */-->
+<!--            justify-content: space-between; /* Pushes logo left, menu right */-->
+<!--            height: 80px; /* Adjust as needed */-->
+<!--        }-->
 
-<!--        <div class="image-container">-->
-<!--            <img src="main_logo.JPG" alt="main_logo.JPG" width="90">-->
-<!--        </div>-->
+<!--        .header-content {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: space-between;-->
+<!--            width: 100%;-->
+<!--        }-->
 
-<!--        <h1>Hello This is Home page</h1>-->
+<!--        .header-content img {-->
+<!--            margin-left: 20px; /* Adds spacing for the logo */-->
+<!--        }-->
 
-<!--    </body>-->
+<!--        .header-content nav {-->
+<!--            margin-left: auto; /* Pushes nav menu to the right */-->
+<!--        }-->
+
+<!--        .header-content nav ul {-->
+<!--            list-style: none;-->
+<!--            padding: 0;-->
+<!--            margin: 0;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            height: 100%;-->
+<!--        }-->
+
+<!--        .header-content nav ul li {-->
+<!--            margin: 0 15px;-->
+<!--        }-->
+
+<!--        .header-content nav ul li a {-->
+<!--            color: white;-->
+<!--            text-decoration: none;-->
+<!--            font-size: 16px;-->
+<!--            font-weight: bold;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            height: 100%;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <title>Home</title>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--    <div class="image-container" id="header-placeholder">-->
+<!--        &lt;!&ndash; Header will be loaded here &ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <h1>Hello This is Home page</h1>-->
+
+<!--    <script>-->
+<!--        fetch("header.html")-->
+<!--            .then(response => response.text())-->
+<!--            .then(data => {-->
+<!--                document.getElementById("header-placeholder").innerHTML = data;-->
+
+<!--                // Ensure styling applies after loading header-->
+<!--                setTimeout(() => {-->
+<!--                    document.querySelector(".header-content").classList.add("image-container");-->
+<!--                }, 100);-->
+<!--            })-->
+<!--            .catch(error => console.error("Error loading header:", error));-->
+<!--    </script>-->
+
+<!--</body>-->
 <!--</html>-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
+        /* Sets the whole webpage background to cream */
+        body {
+            background-color: #FFFDD0; /* Cream color */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
         .image-container {
             background-color: black;
             padding: 10px 20px;
-            border-radius: 15px;
             display: flex;
             align-items: center; /* Vertically aligns items */
             justify-content: space-between; /* Pushes logo left, menu right */
-            height: 80px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            position: fixed; /* Keeps it fixed at the top */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensures it stays above other content */
+            box-sizing: border-box;
+            border-radius: 15px;
         }
 
-        .image-container .header-content {
+        /* Pushes content down so it doesn’t overlap with fixed header */
+        .content {
+            padding-top: 100px; /* Adjust based on header height */
+        }
+
+        .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
         }
 
-        .image-container img {
+        .header-content img {
             margin-left: 20px; /* Adds spacing for the logo */
         }
 
-        .image-container nav {
+        .header-content nav {
             margin-left: auto; /* Pushes nav menu to the right */
         }
 
-        .image-container nav ul {
+        .header-content nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -62,11 +140,11 @@
             height: 100%;
         }
 
-        .image-container nav ul li {
+        .header-content nav ul li {
             margin: 0 15px;
         }
 
-        .image-container nav ul li a {
+        .header-content nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 16px;
@@ -85,14 +163,22 @@
     <!-- Header will be loaded here -->
 </div>
 
-<h1>Hello This is Home page</h1>
+<div class="content">
+    <h1>Hello, this is the Home page</h1>
+    <p>Scroll down to see if the header stays fixed.</p>
+    <p style="height: 1500px;">This is a long page to test scrolling.</p>
+</div>
 
 <script>
-    // Load header.html inside the black bar
     fetch("header.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header-placeholder").innerHTML = data;
+
+            // Ensure styling applies after loading header
+            setTimeout(() => {
+                document.querySelector(".header-content").classList.add("image-container");
+            }, 100);
         })
         .catch(error => console.error("Error loading header:", error));
 </script>

@@ -61,15 +61,34 @@ h1{
 }
 
 .athlete_container{
-	display: inline-block;
-	height: 300px;
+	display: grid;
+	align-items:center;
+	grid-template-columns: 1fr 3fr;
+	grid-column-gap: 3%;
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 2%;
+	background-color: gray;
+}
+
+.athlete_container_right{
+	display: grid;
+	align-items:center;
+	grid-template-columns: 3fr 1fr;
+	grid-column-gap: 3%;
 	width: 90%;
 	margin-left: 5%;
 	background-color: gray;
 }
 
+.athlete_photo{
+	aspect-ratio:1/1;
+	max-height:100%;
+	vertical-align:text-bottom;
+}
+
 .paragraph_text{
-	display: inline-block;
+	white-space: pre-line;
 }
 
 @media screen and (max-width: 600px){
@@ -128,28 +147,50 @@ h1{
 		</h1>
 		<div class="athlete_container">
 		<a href="athlete_pages/amos_aguilera.html">
-			<img src="athlete_pages/athlete_data/amos_aguilera/amos_image.png" alt="Picture of Amos Aguilera" style="aspect-ratio:1/1;height:100%;vertical-align:text-bottom;">
+			<img src="athlete_pages/athlete_data/amos_aguilera/amos_image.png" alt="Picture of Amos Aguilera" class ="athlete_photo">
 		</a>
-		<div id="amos_info" class="paragraph_text">
-			Insert Text here
+		<div id="amos_info" class="paragraph_text"> Name: Amos Aguilera
+			Sport: Jurupa Hills High School
+			Story:Amos Aguilera is a 6'1", 170-pound first baseman from Fontana, CA, with a tall, projectable frame and room to add strength. A multi-sport athlete competing in basketball and wrestling, he brings athleticism, coordination, and toughness to the baseball field. Defensively, he has soft hands, solid footwork, and a strong feel for the glove, making him a reliable presence at first base. His short arm action leads to accurate throws, and with further development—particularly by driving through his target—he can add more velocity.
+
 		</div>
 		</div>
 
-		<div class="athlete_container">
+		<div class="athlete_container_right">
+		<div id="amos_info" class="paragraph_text" style = "margin-left:5%;"> Name: Amos Aguilera	
+			Sport: Jurupa Hills High School
+			Story:Amos Aguilera is a 6'1", 170-pound first baseman from Fontana, CA, with a tall, projectable frame and room to add strength. A multi-sport athlete competing in basketball and wrestling, he brings athleticism, coordination, and toughness to the baseball field. Defensively, he has soft hands, solid footwork, and a strong feel for the glove, making him a reliable presence at first base. His short arm action leads to accurate throws, and with further development—particularly by driving through his target—he can add more velocity.
+
 		</div>
+		<a href="athlete_pages/amos_aguilera.html">
+			<img src="athlete_pages/athlete_data/amos_aguilera/amos_image.png" alt="Picture of Amos Aguilera" class ="athlete_photo">
+		</a>
+		</div>
+		
+		
+		
 		<script>
-		function load_data(name,Id_ref){
-		document.getElementById("amos_aguilera_intro.txt").addEventListener('change',function(event){
-			const file = event.target.files[0];
-			const reader = new FileReader();
-			reader.onload = fuction(e){
-				document.getElementById(Id_ref).innerHTML = e.target.result;
-			};
-			reader.readAsText(file);
-			});
+		<!-- function load_data(name,Id_ref){
 			document.getElementById(Id_ref).style.color = "blue";
+			fetch("athlete_pages/athlete_data/amos_aguilera/amos_aguilera.txt")
+				.then(res => {
+				var input = res.body.getReader();
+				var reader = new FileReader();
+				reader.onload = function(){
+					var text = reader.result;
+					document.getElementById(Id_ref).innerText = text;
+				};
+				reader.readAsText(input.files[0]);
+				})
 		}
-		window.onLoad = load_data("amos_aguilera","amos_info");
+		
+		load_data("amos_aguilera","amos_info"); -->
 		</script>
+		
+		
+		
+		<input type="file" id="fileInput" />
+<div id="fileInfo"></div>
+
 </body>
 </html>

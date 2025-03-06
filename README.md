@@ -1,3 +1,3 @@
 # CSC-131-Project
-# George was here! 
-# George was here again! again?
+# Welcome to the "*** Sports"
+This is a website of a Athelete Management team.

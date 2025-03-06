@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Athlete Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+@font-face { font-family: Bodoni; src: url('/fonts/BodoniFLF-Roman.ttf');}
+@font-face { font-family: Bodoni; font-weight: bold; src: url('/fonts/BodoniFLF-Bold.ttf');}
+
+body{
+	margin: auto;
+	background-color:#faeacd;
+	color: #ffffff;
+	line-height: 1.5;
+}
+
+.header {
+	position: sticky;
+	top: 0;
+	padding: 10px 20px 25px;
+	background: #191919;
+	color: #f1f1f1;
+	margin: 0;
+	font-family: Bodoni, serif;
+	font-weight: bold;
+}
+
+h1{
+	color: black;
+	text-align: center;
+	font-family: Bodoni, serif;
+}
+.header_button{
+	background-color: #191919;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	font-family: Bodoni, serif;
+	font-size: 1.5vw;
+	float: left;
+	padding-top: 5px;
+	padding-right: 2vw;
+}
+
+.logo_button{
+	background-color: #191919;
+	border: none;
+	color: white;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	font-family: Bodoni, serif;
+	float: left;
+	padding-top: 5px;
+	padding-right: 22vw;
+}
+
+.athlete_container{
+	display: inline-block;
+	height: 400px;
+	width: 90%;
+	margin-left: 5%;
+	background-color: gray;
+}
+
+@media screen and (max-width: 600px){
+	.header_button{
+		display: none;
+	}
+}
+}
+</style>
+</head>
+<body>
+	<main>
+		<div class="header">
+			<div class="content-width">
+				<div class="header">
+					<a href="home.html">
+						<button class="logo_button">
+							<img src="main_logo.JPG" alt="Logo" width="40">
+						</button>
+					</a>
+					<a href="athletes.html">
+						<button class="header_button">
+							Athletes
+						</button>
+					</a>
+					<a href="about.html">
+						<button class="header_button">
+							About
+						</button>
+					</a>
+					<a href="services.html">
+						<button class="header_button">
+							Services
+						</button>
+					</a>
+					<a href="testimonials.html">
+						<button class="header_button">
+							Testimonials
+						</button>
+					</a>	
+					<a href="contact.html">
+						<button class="header_button">
+							Contact
+						</button>
+					</a>
+					<a href="privacy.html">
+						<button class="header_button">
+							Privacy
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<h1>
+		Our Athletes
+		</h1>
+		<div class="athlete_container">
+		</div>
+		<div class="athlete_container">
+		</div>
+</body>
+</html>

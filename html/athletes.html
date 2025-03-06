@@ -62,10 +62,14 @@ h1{
 
 .athlete_container{
 	display: inline-block;
-	height: 400px;
+	height: 300px;
 	width: 90%;
 	margin-left: 5%;
 	background-color: gray;
+}
+
+.paragraph_text{
+	display: inline-block;
 }
 
 @media screen and (max-width: 600px){
@@ -123,8 +127,29 @@ h1{
 		Our Athletes
 		</h1>
 		<div class="athlete_container">
+		<a href="athlete_pages/amos_aguilera.html">
+			<img src="athlete_pages/athlete_data/amos_aguilera/amos_image.png" alt="Picture of Amos Aguilera" style="aspect-ratio:1/1;height:100%;vertical-align:text-bottom;">
+		</a>
+		<div id="amos_info" class="paragraph_text">
+			Insert Text here
 		</div>
+		</div>
+
 		<div class="athlete_container">
 		</div>
+		<script>
+		function load_data(name,Id_ref){
+		document.getElementById("amos_aguilera_intro.txt").addEventListener('change',function(event){
+			const file = event.target.files[0];
+			const reader = new FileReader();
+			reader.onload = fuction(e){
+				document.getElementById(Id_ref).innerHTML = e.target.result;
+			};
+			reader.readAsText(file);
+			});
+			document.getElementById(Id_ref).style.color = "blue";
+		}
+		window.onLoad = load_data("amos_aguilera","amos_info");
+		</script>
 </body>
 </html>

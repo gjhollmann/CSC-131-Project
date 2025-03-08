@@ -45,6 +45,7 @@
             z-index: 1000; /* Ensures it stays above other content */
             box-sizing: border-box;
             border-radius: 15px;
+            width: 100%;
         }
 
         /* Pushes content down so it doesn’t overlap with fixed header */
@@ -173,6 +174,18 @@
 
     <div class="image-container" id="header-placeholder">
         <!-- Header will be loaded here -->
+<!--        <img src="main_logo.JPG" alt="Logo" width="90">-->
+<!--        <nav>-->
+<!--            <ul>-->
+<!--                <li><a href="index.html">Home</a></li>-->
+<!--                <li><a href="about.html">About</a></li>-->
+<!--                <li><a href="athletes.html">Athletes</a></li>-->
+<!--                <li><a href="contact.html">Contact</a></li>-->
+<!--                <li><a href="privacy.html">Privacy</a></li>-->
+<!--                <li><a href="services.html">Services</a></li>-->
+<!--                <li><a href="testimonials.html">Testimonial</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
     </div>
 
     <div class="content">
@@ -233,7 +246,7 @@
     </footer>
 
     <script>
-        fetch("header.html")
+        fetch('./header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header-placeholder").innerHTML = data;
